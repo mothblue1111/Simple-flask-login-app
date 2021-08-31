@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Barber Reviews</h2>
+    <br>
+    <div class="row">
+        <div class="col12">
+
+            <ul class="collection">
+                { for review in reviews }
+                <li class="collection-item avatar">
+                    <i class="material-icons circle"></i>
+                    <span class="title">{{ review.barber_name }}</span>
+                    <p>{{ review.date_of_cut }}</p>
+                    <p>{{ review.comment }}</p>
+                    <p>By {{ review.author }}</p>
+
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+
+</div>
+{% endblock %}

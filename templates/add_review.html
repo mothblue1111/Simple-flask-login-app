@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <h3 class="teal-text text-darken-4 center-align">Add your review</h3>
+    <br>
+    <div class="row">
+        <div class="col s12">
+            <form method="POST" action="{{ url_for('add_review') }}">
+                <label for="barber_name" class="required">Barber name</label>
+                <textarea name="barber_name" id="barber_name" rows="10" tabindex="4" required="required"></textarea>
+
+                <label for="comment" class="required">Your Reviews</label>
+                <textarea name="comment" id="comment" rows="10" tabindex="4" required="required" minlength="5"
+                    maxlength="200"></textarea>
+
+                <label for="date_of_cut">Date:</label>
+
+                <input type="date" id="date_of_cut" name="date_of_cut" value="2020-01-22" min="2019-01-01"
+                    max="2060-12-31">
+
+                <input type="hidden" name="comment_post_ID" value="1" id="comment_post_ID" />
+                <input name="submit" type="submit" value="Submit" class="waves-effect waves-light btn">
+                
+
+            </form>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
